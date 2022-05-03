@@ -11,6 +11,7 @@ import ProjectsSection from './components/ProjectsSection'
 import GaetteAccordion from './components/project-accordions/Gaette'
 import AboutMeSection from './components/AboutMeSection'
 import Interests from './components/Interests.js'
+import PortfolioScroll from './components/project-accordions/PortfolioScroll'
 
 const theme = createTheme(themeOptions);
 
@@ -111,7 +112,7 @@ function App() {
           </Animator>
         </ScrollPage>
         <ScrollPage page={1} id="nextPage">
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }} >
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", zIndex: "+2" }} >
             <span style={{ fontSize: "40px" }}>
               <Animator animation={batch(MoveIn(-1000, 0), MoveOut(1000, 0))}>
                 <Link className="underQuotelink" href="https://github.com/Olys6" target="_blank" rel="noreferrer" color="secondary" underline="hover" ><strong><i className="fa-brands fa-github"></i> Olys6</strong></Link>
@@ -152,14 +153,15 @@ function App() {
           </Animator>
         </ScrollPage>
         <ScrollPage page={3}>
-          <Animator animation={batch(MoveIn(1000, 0), MoveOut(-1000, 0), Sticky(40))}>
+          <Animator animation={batch(MoveIn(1000, 0), MoveOut(-1000, 0), Sticky(20))}>
             <ProjectsSection />
           </Animator>
         </ScrollPage>
         <ScrollPage page={4}>
-          <Animator animation={batch(MoveIn(1000, 0), MoveOut(-1000, 0), Sticky())}>
+          <Animator animation={batch(MoveIn(1000, 0), MoveOut(-1000, 0))}>
             <div className="projectsSection" style={{ marginRight: "-20px" }}>
               <GaetteAccordion />
+              <PortfolioScroll />
             </div>
           </Animator>
         </ScrollPage>
